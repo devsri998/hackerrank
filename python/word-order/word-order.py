@@ -1,19 +1,14 @@
 #!/usr/bin/env python
 
-import collections
+from collections import Counter
 
-n = int(raw_input())
+n=int(input())
 
-d = collections.OrderedDict()
 
-for i in range(n):
-    word = raw_input()
-    if word in d:
-        d[word] += 1
-    else:
-        d[word] = 1
+l=list(input() for i in range(n))
+m=Counter(l)
+        
+print(len(m))
+for i in m:
+    print(m[i],end=" ")
 
-print len(d)
-
-for key, value in d.iteritems():
-    print value,
